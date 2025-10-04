@@ -1,3 +1,4 @@
+import os
 import requests
 import logging
 from django.utils.dateparse import parse_datetime
@@ -67,9 +68,13 @@ def fetch_and_store_news(category="general"):
 
 
 # openrouter_summarizer.py
-import requests
+from dotenv import load_dotenv
 
-OPENROUTER_API_KEY = "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"  # <-- Replace with your API key
+# Load .env file
+load_dotenv()
+
+# Fetch keys safely
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 MODEL_ID = "deepseek/deepseek-chat-v3.1:free"  # <-- Free OpenRouter model for summarization
 
 def summarize_text(text, max_length=50, min_length=20):
