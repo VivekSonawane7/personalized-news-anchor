@@ -12,40 +12,40 @@ personalized-news-anchor/
 └── README.md
 
 
-# Fetch general news
+### Fetch general news
 http://127.0.0.1:8000/api/fetch-news/
 
-# Fetch technology news
+### Fetch technology news
 http://127.0.0.1:8000/api/fetch-news/?category=technology
 
-# All articles
+### All articles
 http://127.0.0.1:8000/api/articles/
 
-# Technology articles only
+### Technology articles only
 http://127.0.0.1:8000/api/articles/?category=technology
 
-# Search for "apple"
+### Search for "apple"
 http://127.0.0.1:8000/api/articles/?search=apple
 
-# Get Chategories
+### Get Chategories
 http://127.0.0.1:8000/api/categories/
 
-# Clear news
+### Clear news
 http://127.0.0.1:8000/api/clear-news/
 
 
-# business - Business news
-# entertainment - Entertainment news
-# general - General news (default)
-# health - Health and medical news
-# science - Science and research news
-# sports - Sports news
-# technology - Technology news
+### business - Business news
+### entertainment - Entertainment news
+### general - General news (default)
+### health - Health and medical news
+### science - Science and research news
+### sports - Sports news
+### technology - Technology news
 
-Go to newsapi.org
-Register for a free account
-Get your API key
-Add it to your .env file
+### Go to newsapi.org
+###Register for a free account
+###Get your API key
+###Add it to your .env file
 
-# For starting Application
+### For starting Application
 python manage.py runserver
