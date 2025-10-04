@@ -69,8 +69,8 @@ def fetch_and_store_news(category="general"):
 # openrouter_summarizer.py
 import requests
 
-OPENROUTER_API_KEY = "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"  # <-- Replace with your API key
-MODEL_ID = "nvidia/nemotron-nano-9b-v2:free"  # <-- Free OpenRouter model for summarization
+OPENROUTER_API_KEY = "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"  # <-- Replace with your API key
+MODEL_ID = "deepseek/deepseek-chat-v3.1:free"  # <-- Free OpenRouter model for summarization
 
 def summarize_text(text, max_length=50, min_length=20):
     """
