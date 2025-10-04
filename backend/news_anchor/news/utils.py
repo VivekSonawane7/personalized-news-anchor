@@ -63,3 +63,43 @@ def fetch_and_store_news(category="general"):
         print(f"❌ Unexpected error: {e}")
 
     return 0
+
+
+
+# openrouter_summarizer.py
+import requests
+
+OPENROUTER_API_KEY = "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"  # <-- Replace with your API key
+MODEL_ID = "nvidia/nemotron-nano-9b-v2:free"  # <-- Free OpenRouter model for summarization
+
+def summarize_text(text, max_length=50, min_length=20):
+    """
+    Summarize a news article using OpenRouter's free model.
+    """
+    if not text:
+        return "No content to summarize."
+
+    prompt = f"Deliver a news anchor-style summary of this article in 2-3 concise sentences, highlighting key developments.:\n\n{text}"
+
+    headers = {
+        "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+        "Content-Type": "application/json",
+    }
+
+    data = {
+        "model": MODEL_ID,
+        "messages": [{"role": "user", "content": prompt}],
+    }
+
+    try:
+        response = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            json=data,
+            headers=headers,
+            timeout=10
+        )
+        response.raise_for_status()
+        summary = response.json().get("choices", [{}])[0].get("message", {}).get("content", "")
+        return summary if summary else "No summary available."
+    except requests.exceptions.RequestException as e:
+        return f"Error: {e}"

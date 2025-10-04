@@ -4,7 +4,8 @@ from .views import (
     NewsArticleViewSet,
     FetchNewsAPIView,
     CategoryListView,
-    ClearNewsAPIView
+    ClearNewsAPIView,
+    RandomSummarizeNewsAPIView,
 )
 
 router = DefaultRouter()
@@ -15,4 +16,6 @@ urlpatterns = [
     path('fetch-news/', FetchNewsAPIView.as_view(), name='fetch-news'),
     path('categories/', CategoryListView.as_view(), name='categories'),
     path('clear-news/', ClearNewsAPIView.as_view(), name='clear-news'),
+    path('random-summarize/', RandomSummarizeNewsAPIView.as_view(), name='random-summarize-news'),
+
 ]

@@ -72,3 +72,39 @@ class ClearNewsAPIView(APIView):
             "status": "success",
             "message": f"Cleared {count} articles from database"
         })
+
+
+
+# views.py
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import NewsArticle
+from .utils import summarize_text
+from django.db.models import Count
+import random
+
+class RandomSummarizeNewsAPIView(APIView):
+    """
+    API to get a random news article from the database and summarize it.
+    """
+
+    def get(self, request):
+        total_articles = NewsArticle.objects.count()
+        if total_articles == 0:
+            return Response({"error": "No articles in the database"}, status=404)
+
+        # Get a random article
+        random_index = random.randint(0, total_articles - 1)
+        article = NewsArticle.objects.all()[random_index]
+
+        # Summarize description or title if description is empty
+        summary = summarize_text(article.description or article.title)
+
+        return Response({
+            "id": article.id,
+            "title": article.title,
+            "url": article.url,
+            "category": article.category,
+            "published_at": article.published_at,
+            "summary": summary
+        })
