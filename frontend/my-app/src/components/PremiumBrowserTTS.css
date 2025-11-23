@@ -1,0 +1,346 @@
+.premium-browser-tts {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    margin: 20px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tts-header h3 {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 600;
+}
+
+.tts-status-indicator {
+    font-size: 0.9em;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.status-loading {
+    color: #ffd700;
+}
+
+.status-playing {
+    color: #4CAF50;
+}
+
+.status-paused {
+    color: #FF9800;
+}
+
+.status-ready {
+    color: #4CAF50;
+}
+
+/* Voice Selection */
+.voice-selection-section {
+    margin-bottom: 20px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.voice-select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.voice-select:focus {
+    outline: none;
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.voice-select option {
+    background: #2d3748;
+    color: white;
+}
+
+/* Advanced Controls */
+.advanced-controls-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.control-group {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+.control-icon {
+    font-size: 1.1em;
+}
+
+.control-value {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.control-slider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+    margin-bottom: 8px;
+}
+
+.control-slider:hover {
+    opacity: 1;
+}
+
+.control-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.control-slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #4CAF50;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+.control-slider:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 5px;
+}
+
+/* Main Controls */
+.tts-main-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.play-btn {
+    padding: 15px 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.play-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.play-btn.active {
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+}
+
+.play-btn:disabled {
+    background: rgba(255, 255, 255, 0.2);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.secondary-controls {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.control-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.pause-btn {
+    background: #FF9800;
+    color: white;
+}
+
+.resume-btn {
+    background: #4CAF50;
+    color: white;
+}
+
+.stop-btn {
+    background: #f44336;
+    color: white;
+}
+
+.control-btn:hover:not(:disabled) {
+    transform: translateY(-1px);
+    opacity: 0.9;
+}
+
+.control-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Error and Info Messages */
+.error-message {
+    background: rgba(244, 67, 54, 0.2);
+    border: 1px solid rgba(244, 67, 54, 0.5);
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.voice-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+.voice-details {
+    margin-bottom: 5px;
+}
+
+.voice-details:last-child {
+    margin-bottom: 0;
+}
+
+.browser-warning, .voice-warning {
+    background: rgba(255, 152, 0, 0.2);
+    border: 1px solid rgba(255, 152, 0, 0.5);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .premium-browser-tts {
+        padding: 20px;
+        margin: 15px 0;
+    }
+
+    .tts-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .advanced-controls-section {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .control-group {
+        padding: 12px;
+    }
+
+    .play-btn {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+
+    .secondary-controls {
+        justify-content: stretch;
+    }
+
+    .control-btn {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .premium-browser-tts {
+        padding: 15px;
+    }
+
+    .tts-header h3 {
+        font-size: 1.2em;
+    }
+
+    .voice-select {
+        padding: 10px 12px;
+    }
+}
+
+/* Animation for loading state */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.status-loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
